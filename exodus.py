@@ -16,9 +16,11 @@ matrix         = Adafruit_RGBmatrix(32, 2) # rows, chain length
 
 orangeLineOrange     = (255, 130, 0) # Color for route labels (usu. numbers)
 black = (0, 0, 0)
+red = (255, 0, 0)
+white = (255, 255, 255)
+greenLineGreen = (66, 134, 8)
+font           = ImageFont.load(os.path.dirname(os.path.realpath(__file__)) + '/helvR08.pil')
 
-font           = ImageFont.load(os.path.dirname(os.path.realpath(__file__))
-                   + '/helvR08.pil')
 
 # Main application -----------------------------------------------------------
 
@@ -38,11 +40,16 @@ atexit.register(clearOnExit)
 # Draw Stuff
 draw.rectangle((0, 0, width, height), fill=orangeLineOrange)
 draw.rectangle((1, 1, width-2, height-2), fill=black)
+#draw.rectangle((1, 1, width-2, 10), fill=white)
 
-draw.text((5, 5), "Exodus Bagels", font=font,
+draw.line((0, 10, width, 10), fill=orangeLineOrange)
+
+draw.text((2, 0), "To:  Oak Grove", font=font,
           fill=orangeLineOrange)
 
+draw.text((4, 10), "2, 13, 25 mins. ", font=font, fill=white)
+draw.text((5, 20), "   No Delays! ", font=font, fill=greenLineGreen)
 # Offscreen buffer is copied to screen
 matrix.SetImage(image.im.id, 0, 0)
 
-text = raw_input("press any key to exit...")
+text = raw_input("Press enter to exit...")
