@@ -34,10 +34,10 @@ atexit.register(clearOnExit)
 # Clear background
 draw.rectangle((0, 0, width, height), fill=(0, 0, 0))
 
-draw.text((10, 10), "hello world", font=font,
+draw.text((10, 10), "Exodus Bagels", font=font,
           fill=orangeLineOrange)
 
 # Offscreen buffer is copied to screen
 matrix.SetImage(image.im.id, 0, 0)
 
-text = raw_input("prompt")
+text = raw_input("press any key to exit...")
