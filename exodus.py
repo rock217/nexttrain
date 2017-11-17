@@ -37,9 +37,9 @@ atexit.register(clearOnExit)
 
 # Draw Stuff
 draw.rectangle((0, 0, width, height), fill=orangeLineOrange)
-draw.rectangle((1, 1, width-1, height-1), fill=black)
+draw.rectangle((1, 1, width-2, height-2), fill=black)
 
-draw.text((10, 10), "Exodus Bagels", font=font,
+draw.text((5, 5), "Exodus Bagels", font=font,
           fill=orangeLineOrange)
 
 # Offscreen buffer is copied to screen
