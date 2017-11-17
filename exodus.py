@@ -8,11 +8,15 @@ import time
 
 from rgbmatrix import Adafruit_RGBmatrix
 
+# Configuration
+
 width          = 64  # Matrix size (pixels) -- change for different matrix
 height         = 32  # types (incl. tiling).  Other code may need tweaks.
 matrix         = Adafruit_RGBmatrix(32, 2) # rows, chain length
 
 orangeLineOrange     = (255, 130, 0) # Color for route labels (usu. numbers)
+black = (0, 0, 0)
+
 font           = ImageFont.load(os.path.dirname(os.path.realpath(__file__))
                    + '/helvR08.pil')
 
@@ -31,8 +35,9 @@ def clearOnExit():
 
 atexit.register(clearOnExit)
 
-# Clear background
-draw.rectangle((0, 0, width, height), fill=(0, 0, 0))
+# Draw Stuff
+draw.rectangle((0, 0, width, height), fill=orangeLineOrange)
+draw.rectangle((1, 1, width-1, height-1), fill=black)
 
 draw.text((10, 10), "Exodus Bagels", font=font,
           fill=orangeLineOrange)
