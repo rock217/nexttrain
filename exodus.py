@@ -2,14 +2,14 @@ import atexit
 import Image
 import ImageDraw
 import ImageFont
-import math
 import os
 import time
+from predict import getTrainTimes
 
 from rgbmatrix import Adafruit_RGBmatrix
 
-# Configuration
 
+# Configuration
 width          = 64  # Matrix size (pixels) -- change for different matrix
 height         = 32  # types (incl. tiling).  Other code may need tweaks.
 matrix         = Adafruit_RGBmatrix(32, 2) # rows, chain length
@@ -37,19 +37,27 @@ def clearOnExit():
 
 atexit.register(clearOnExit)
 
-# Draw Stuff
-draw.rectangle((0, 0, width, height), fill=orangeLineOrange)
-draw.rectangle((1, 1, width-2, height-2), fill=black)
-#draw.rectangle((1, 1, width-2, 10), fill=white)
+# Event loop
+while True:
+	data = getTrainTimes()
+	print data
+	# Draw Stuff
+	draw.rectangle((0, 0, width, height), fill=orangeLineOrange)
+	draw.rectangle((1, 1, width-2, height-2), fill=black)
+	#draw.rectangle((1, 1, width-2, 10), fill=white)
 
-draw.line((0, 10, width, 10), fill=orangeLineOrange)
+	draw.line((0, 10, width, 10), fill=orangeLineOrange)
 
-draw.text((2, 0), "To:  Oak Grove", font=font,
-          fill=orangeLineOrange)
+	for label, times in data.items():
+		times.sort()
+		minutes = [x / 60 for x in times[0:3]]
+		draw.text((2, 0), "To:  "+label, font=font, fill=orangeLineOrange)
+		draw.text((2, 10), ", ".join(map(str, minutes)) +" mins. ", font=font, fill=white)
 
-draw.text((4, 10), "2, 13, 25 mins. ", font=font, fill=white)
-draw.text((5, 20), "   No Delays! ", font=font, fill=greenLineGreen)
-# Offscreen buffer is copied to screen
-matrix.SetImage(image.im.id, 0, 0)
+	draw.text((5, 20), "   No Delays! ", font=font, fill=greenLineGreen)
+	# Offscreen buffer is copied to screen
+
+	matrix.SetImage(image.im.id, 0, 0)
+	time.sleep(15)
 
 text = raw_input("Press enter to exit...")

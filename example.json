@@ -1,0 +1,588 @@
+{
+	"stop_id": "place-sstat",
+	"stop_name": "South Station",
+	"mode": [{
+		"route_type": "1",
+		"mode_name": "Subway",
+		"route": [{
+			"route_id": "Red",
+			"route_name": "Red Line",
+			"direction": [{
+				"direction_id": "0",
+				"direction_name": "Southbound",
+				"trip": [{
+					"trip_id": "34708333",
+					"trip_name": "10:08 am from Alewife to Braintree",
+					"trip_headsign": "Braintree",
+					"sch_arr_dt": "1511018940",
+					"sch_dep_dt": "1511018940",
+					"pre_dt": "1511019474",
+					"pre_away": "384",
+					"vehicle": {
+						"vehicle_id": "5451DB57",
+						"vehicle_lat": "42.36228",
+						"vehicle_lon": "-71.08379",
+						"vehicle_bearing": "95",
+						"vehicle_timestamp": "1511019050",
+						"vehicle_label": "1879"
+					}
+				}, {
+					"trip_id": "34708151",
+					"trip_name": "10:15 am from Alewife to Ashmont - Outbound",
+					"trip_headsign": "Ashmont",
+					"sch_arr_dt": "1511019360",
+					"sch_dep_dt": "1511019360",
+					"pre_dt": "1511019715",
+					"pre_away": "625",
+					"vehicle": {
+						"vehicle_id": "5451E4B6",
+						"vehicle_lat": "42.36804",
+						"vehicle_lon": "-71.10831",
+						"vehicle_bearing": "125",
+						"vehicle_timestamp": "1511019064",
+						"vehicle_label": "1521"
+					}
+				}, {
+					"trip_id": "34708341",
+					"trip_name": "10:22 am from Alewife to Braintree",
+					"trip_headsign": "Braintree",
+					"sch_arr_dt": "1511019780",
+					"sch_dep_dt": "1511019780",
+					"pre_dt": "1511020097",
+					"pre_away": "1007",
+					"vehicle": {
+						"vehicle_id": "5451DED8",
+						"vehicle_lat": "42.39202",
+						"vehicle_lon": "-71.11925",
+						"vehicle_bearing": "175",
+						"vehicle_timestamp": "1511019064",
+						"vehicle_label": "1846"
+					}
+				}]
+			}, {
+				"direction_id": "1",
+				"direction_name": "Northbound",
+				"trip": [{
+					"trip_id": "34708232",
+					"trip_name": "10:08 am from Braintree to Alewife",
+					"trip_headsign": "Alewife",
+					"sch_arr_dt": "1511019360",
+					"sch_dep_dt": "1511019360",
+					"pre_dt": "1511019432",
+					"pre_away": "342",
+					"vehicle": {
+						"vehicle_id": "5451D1FA",
+						"vehicle_lat": "42.3233",
+						"vehicle_lon": "-71.05299",
+						"vehicle_bearing": "315",
+						"vehicle_timestamp": "1511019070",
+						"vehicle_label": "1708"
+					}
+				}, {
+					"trip_id": "34708233",
+					"trip_name": "10:22 am from Braintree to Alewife",
+					"trip_headsign": "Alewife",
+					"sch_arr_dt": "1511020200",
+					"sch_dep_dt": "1511020200",
+					"pre_dt": "1511020208",
+					"pre_away": "1118",
+					"vehicle": {
+						"vehicle_id": "5451DE0A",
+						"vehicle_lat": "42.2583",
+						"vehicle_lon": "-71.01168",
+						"vehicle_bearing": "315",
+						"vehicle_timestamp": "1511019064",
+						"vehicle_label": "1852"
+					}
+				}, {
+					"trip_id": "34708070",
+					"trip_name": "10:27 am from Ashmont - Inbound to Alewife",
+					"trip_headsign": "Alewife",
+					"sch_arr_dt": "1511019780",
+					"sch_dep_dt": "1511019780",
+					"pre_dt": "1511019816",
+					"pre_away": "726",
+					"vehicle": {
+						"vehicle_id": "5451E487",
+						"vehicle_lat": "42.29997",
+						"vehicle_lon": "-71.06181",
+						"vehicle_bearing": "80",
+						"vehicle_timestamp": "1511019058",
+						"vehicle_label": "1718"
+					}
+				}, {
+					"trip_id": "983F1FB1",
+					"trip_name": "",
+					"pre_dt": "1511019374",
+					"pre_away": "284",
+					"vehicle": {
+						"vehicle_id": "5451E577",
+						"vehicle_lat": "42.32589",
+						"vehicle_lon": "-71.05635",
+						"vehicle_bearing": "305",
+						"vehicle_timestamp": "1511019050",
+						"vehicle_label": "1710"
+					}
+				}]
+			}]
+		}]
+	}, {
+		"route_type": "2",
+		"mode_name": "Commuter Rail",
+		"route": [{
+			"route_id": "CR-Fairmount",
+			"route_name": "Fairmount Line",
+			"direction": [{
+				"direction_id": "0",
+				"direction_name": "Outbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-September-17-FMT-1759",
+					"trip_name": "1759 (10:50 am from South Station)",
+					"trip_headsign": "Readville",
+					"sch_arr_dt": "1511020200",
+					"sch_dep_dt": "1511020200",
+					"pre_dt": "1511020200",
+					"pre_away": "1110"
+				}]
+			}, {
+				"direction_id": "1",
+				"direction_name": "Inbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-September-17-FMT-1758",
+					"trip_name": "1758 (10:30 am from Readville)",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511020500",
+					"sch_dep_dt": "1511020500",
+					"pre_dt": "1511020581",
+					"pre_away": "1491"
+				}]
+			}]
+		}, {
+			"route_id": "CR-Franklin",
+			"route_name": "Franklin Line",
+			"direction": [{
+				"direction_id": "0",
+				"direction_name": "Outbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-Spring-17-1707",
+					"trip_name": "1707 (11:20 am from South Station)",
+					"trip_headsign": "Forge Park/495",
+					"sch_arr_dt": "1511022000",
+					"sch_dep_dt": "1511022000",
+					"pre_dt": "1511022000",
+					"pre_away": "2910"
+				}]
+			}, {
+				"direction_id": "1",
+				"direction_name": "Inbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-Spring-17-1706",
+					"trip_name": "1706 (10:40 am from Forge Park/495)",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511023380",
+					"sch_dep_dt": "1511023380",
+					"pre_dt": "1511023681",
+					"pre_away": "4591"
+				}]
+			}]
+		}, {
+			"route_id": "CR-Greenbush",
+			"route_name": "Greenbush Line",
+			"direction": [{
+				"direction_id": "0",
+				"direction_name": "Outbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-Spring-17-1075",
+					"trip_name": "1075 (11:03 am from South Station)",
+					"trip_headsign": "Greenbush",
+					"sch_arr_dt": "1511020980",
+					"sch_dep_dt": "1511020980",
+					"pre_dt": "1511020980",
+					"pre_away": "1890"
+				}]
+			}, {
+				"direction_id": "1",
+				"direction_name": "Inbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-Spring-17-1074",
+					"trip_name": "1074 (11:08 am from Greenbush)",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511024820",
+					"sch_dep_dt": "1511024820",
+					"pre_dt": "1511024869",
+					"pre_away": "5779"
+				}]
+			}]
+		}, {
+			"route_id": "CR-Kingston",
+			"route_name": "Kingston/Plymouth Line",
+			"direction": [{
+				"direction_id": "1",
+				"direction_name": "Inbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-Spring-17-1052",
+					"trip_name": "1052 (9:37 am from Plymouth)",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511021040",
+					"sch_dep_dt": "1511021040",
+					"pre_dt": "1511021545",
+					"pre_away": "2455",
+					"vehicle": {
+						"vehicle_id": "1712",
+						"vehicle_lat": "42.0788917541504",
+						"vehicle_lon": "-70.9204330444336",
+						"vehicle_bearing": "330",
+						"vehicle_speed": "20",
+						"vehicle_timestamp": "1511018944",
+						"vehicle_label": "1712"
+					}
+				}]
+			}]
+		}, {
+			"route_id": "CR-Middleborough",
+			"route_name": "Middleborough/Lakeville Line",
+			"direction": [{
+				"direction_id": "0",
+				"direction_name": "Outbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-Spring-17-1003",
+					"trip_name": "1003 (11:20 am from South Station)",
+					"trip_headsign": "Middleborough/Lakeville",
+					"sch_arr_dt": "1511022000",
+					"sch_dep_dt": "1511022000",
+					"pre_dt": "1511022000",
+					"pre_away": "2910"
+				}]
+			}, {
+				"direction_id": "1",
+				"direction_name": "Inbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-Spring-17-1006",
+					"trip_name": "1006 (10:28 am from Middleborough/Lakeville)",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511022240",
+					"sch_dep_dt": "1511022240",
+					"pre_dt": "1511022368",
+					"pre_away": "3278",
+					"vehicle": {
+						"vehicle_id": "1714",
+						"vehicle_lat": "41.878589630127",
+						"vehicle_lon": "-70.9186935424805",
+						"vehicle_bearing": "325",
+						"vehicle_speed": "0",
+						"vehicle_timestamp": "1511018938",
+						"vehicle_label": "1714"
+					}
+				}]
+			}]
+		}, {
+			"route_id": "CR-Needham",
+			"route_name": "Needham Line",
+			"direction": [{
+				"direction_id": "0",
+				"direction_name": "Outbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-Spring-17-1605",
+					"trip_name": "1605 (11:10 am from South Station)",
+					"trip_headsign": "Needham Heights",
+					"sch_arr_dt": "1511021400",
+					"sch_dep_dt": "1511021400",
+					"pre_dt": "1511021400",
+					"pre_away": "2310"
+				}]
+			}]
+		}, {
+			"route_id": "CR-Providence",
+			"route_name": "Providence/Stoughton Line",
+			"direction": [{
+				"direction_id": "0",
+				"direction_name": "Outbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-Spring-17-1805",
+					"trip_name": "1805 (11:05 am from South Station)",
+					"trip_headsign": "Providence",
+					"sch_arr_dt": "1511021100",
+					"sch_dep_dt": "1511021100",
+					"pre_dt": "1511021100",
+					"pre_away": "2010"
+				}]
+			}, {
+				"direction_id": "1",
+				"direction_name": "Inbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-Spring-17-1806",
+					"trip_name": "1806 (11:20 am from Providence)",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511026200",
+					"sch_dep_dt": "1511026200",
+					"pre_dt": "1511026114",
+					"pre_away": "7024"
+				}]
+			}]
+		}, {
+			"route_id": "CR-Worcester",
+			"route_name": "Framingham/Worcester Line",
+			"direction": [{
+				"direction_id": "0",
+				"direction_name": "Outbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-Spring-17-1505",
+					"trip_name": "1505 (10:40 am from South Station)",
+					"trip_headsign": "Worcester",
+					"sch_arr_dt": "1511019600",
+					"sch_dep_dt": "1511019600",
+					"pre_dt": "1511019600",
+					"pre_away": "510"
+				}]
+			}, {
+				"direction_id": "1",
+				"direction_name": "Inbound",
+				"trip": [{
+					"trip_id": "CR-Saturday-Spring-17-1504",
+					"trip_name": "1504 (10:50 am from Worcester)",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511025600",
+					"sch_dep_dt": "1511025600",
+					"pre_dt": "1511026287",
+					"pre_away": "7197"
+				}]
+			}]
+		}]
+	}, {
+		"route_type": "3",
+		"mode_name": "Bus",
+		"route": [{
+			"route_id": "741",
+			"route_name": "Silver Line SL1",
+			"direction": [{
+				"direction_id": "0",
+				"direction_name": "Outbound",
+				"trip": [{
+					"trip_id": "35126882",
+					"trip_name": "10:36 am from South Station Silver Line - Outbound to Terminal A",
+					"trip_headsign": "Logan Airport",
+					"sch_arr_dt": "1511019360",
+					"sch_dep_dt": "1511019360",
+					"pre_dt": "1511019360",
+					"pre_away": "270"
+				}, {
+					"trip_id": "35126912",
+					"trip_name": "10:48 am from South Station Silver Line - Outbound to Terminal A",
+					"trip_headsign": "Logan Airport",
+					"sch_arr_dt": "1511020080",
+					"sch_dep_dt": "1511020080",
+					"pre_dt": "1511020080",
+					"pre_away": "990"
+				}, {
+					"trip_id": "35126906",
+					"trip_name": "11:00 am from South Station Silver Line - Outbound to Terminal A",
+					"trip_headsign": "Logan Airport",
+					"sch_arr_dt": "1511020800",
+					"sch_dep_dt": "1511020800",
+					"pre_dt": "1511020800",
+					"pre_away": "1710"
+				}, {
+					"trip_id": "35126936",
+					"trip_name": "11:12 am from South Station Silver Line - Outbound to Terminal A",
+					"trip_headsign": "Logan Airport",
+					"sch_arr_dt": "1511021520",
+					"sch_dep_dt": "1511021520",
+					"pre_dt": "1511021520",
+					"pre_away": "2430"
+				}, {
+					"trip_id": "35126937",
+					"trip_name": "11:24 am from South Station Silver Line - Outbound to Terminal A",
+					"trip_headsign": "Logan Airport",
+					"sch_arr_dt": "1511022240",
+					"sch_dep_dt": "1511022240",
+					"pre_dt": "1511022240",
+					"pre_away": "3150"
+				}]
+			}, {
+				"direction_id": "1",
+				"direction_name": "Inbound",
+				"trip": [{
+					"trip_id": "35127131",
+					"trip_name": "10:15 am from Terminal A to South Station Silver Line - Inbound",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511019540",
+					"sch_dep_dt": "1511019540",
+					"pre_dt": "1511019477",
+					"pre_away": "387",
+					"vehicle": {
+						"vehicle_id": "y1126",
+						"vehicle_lat": "42.3475456237793",
+						"vehicle_lon": "-71.0424194335938",
+						"vehicle_bearing": "299",
+						"vehicle_speed": "0",
+						"vehicle_timestamp": "1511019020",
+						"vehicle_label": "1126"
+					}
+				}, {
+					"trip_id": "35127132",
+					"trip_name": "10:27 am from Terminal A to South Station Silver Line - Inbound",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511020260",
+					"sch_dep_dt": "1511020260",
+					"pre_dt": "1511019885",
+					"pre_away": "795",
+					"vehicle": {
+						"vehicle_id": "y1124",
+						"vehicle_lat": "42.365894317627",
+						"vehicle_lon": "-71.0176467895508",
+						"vehicle_bearing": "42",
+						"vehicle_speed": "0",
+						"vehicle_timestamp": "1511018951",
+						"vehicle_label": "1124"
+					}
+				}, {
+					"trip_id": "35127133",
+					"trip_name": "10:39 am from Terminal A to South Station Silver Line - Inbound",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511020980",
+					"sch_dep_dt": "1511020980",
+					"pre_dt": "1511020677",
+					"pre_away": "1587"
+				}, {
+					"trip_id": "35127134",
+					"trip_name": "10:51 am from Terminal A to South Station Silver Line - Inbound",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511021700",
+					"sch_dep_dt": "1511021700",
+					"pre_dt": "1511021381",
+					"pre_away": "2291"
+				}, {
+					"trip_id": "35127135",
+					"trip_name": "11:03 am from Terminal A to South Station Silver Line - Inbound",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511022420",
+					"sch_dep_dt": "1511022420",
+					"pre_dt": "1511022101",
+					"pre_away": "3011"
+				}, {
+					"trip_id": "35127136",
+					"trip_name": "11:15 am from Terminal A to South Station Silver Line - Inbound",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511023140",
+					"sch_dep_dt": "1511023140",
+					"pre_dt": "1511022821",
+					"pre_away": "3731"
+				}, {
+					"trip_id": "35127137",
+					"trip_name": "11:27 am from Terminal A to South Station Silver Line - Inbound",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511023860",
+					"sch_dep_dt": "1511023860",
+					"pre_dt": "1511023541",
+					"pre_away": "4451"
+				}]
+			}]
+		}, {
+			"route_id": "742",
+			"route_name": "Silver Line SL2",
+			"direction": [{
+				"direction_id": "0",
+				"direction_name": "Outbound",
+				"trip": [{
+					"trip_id": "35126730",
+					"trip_name": "10:35 am from South Station Silver Line - Outbound to Drydock Ave @ Design Center Place",
+					"trip_headsign": "Drydock",
+					"sch_arr_dt": "1511019300",
+					"sch_dep_dt": "1511019300",
+					"pre_dt": "1511019467",
+					"pre_away": "377"
+				}, {
+					"trip_id": "35126799",
+					"trip_name": "10:50 am from South Station Silver Line - Outbound to Drydock Ave @ Design Center Place",
+					"trip_headsign": "Drydock",
+					"sch_arr_dt": "1511020200",
+					"sch_dep_dt": "1511020200",
+					"pre_dt": "1511020305",
+					"pre_away": "1215"
+				}, {
+					"trip_id": "35126731",
+					"trip_name": "11:05 am from South Station Silver Line - Outbound to Drydock Ave @ Design Center Place",
+					"trip_headsign": "Drydock",
+					"sch_arr_dt": "1511021100",
+					"sch_dep_dt": "1511021100",
+					"pre_dt": "1511021205",
+					"pre_away": "2115"
+				}, {
+					"trip_id": "35126798",
+					"trip_name": "11:20 am from South Station Silver Line - Outbound to Drydock Ave @ Design Center Place",
+					"trip_headsign": "Drydock",
+					"sch_arr_dt": "1511022000",
+					"sch_dep_dt": "1511022000",
+					"pre_dt": "1511022105",
+					"pre_away": "3015"
+				}]
+			}, {
+				"direction_id": "1",
+				"direction_name": "Inbound",
+				"trip": [{
+					"trip_id": "35126698",
+					"trip_name": "10:25 am from Drydock Ave @ Design Center Place to South Station Silver Line - Inbound",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511019240",
+					"sch_dep_dt": "1511019240",
+					"pre_dt": "1511019467",
+					"pre_away": "377",
+					"vehicle": {
+						"vehicle_id": "y1107",
+						"vehicle_lat": "42.3472366333008",
+						"vehicle_lon": "-71.0398559570313",
+						"vehicle_bearing": "298",
+						"vehicle_speed": "0",
+						"vehicle_timestamp": "1511019007",
+						"vehicle_label": "1107"
+					}
+				}, {
+					"trip_id": "35126690",
+					"trip_name": "10:40 am from Drydock Ave @ Design Center Place to South Station Silver Line - Inbound",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511020140",
+					"sch_dep_dt": "1511020140",
+					"pre_dt": "1511020305",
+					"pre_away": "1215"
+				}, {
+					"trip_id": "35126759",
+					"trip_name": "10:55 am from Drydock Ave @ Design Center Place to South Station Silver Line - Inbound",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511021040",
+					"sch_dep_dt": "1511021040",
+					"pre_dt": "1511021205",
+					"pre_away": "2115"
+				}, {
+					"trip_id": "35126708",
+					"trip_name": "11:10 am from Drydock Ave @ Design Center Place to South Station Silver Line - Inbound",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511021940",
+					"sch_dep_dt": "1511021940",
+					"pre_dt": "1511022105",
+					"pre_away": "3015"
+				}, {
+					"trip_id": "35126785",
+					"trip_name": "11:25 am from Drydock Ave @ Design Center Place to South Station Silver Line - Inbound",
+					"trip_headsign": "South Station",
+					"sch_arr_dt": "1511022840",
+					"sch_dep_dt": "1511022840",
+					"pre_dt": "1511023005",
+					"pre_away": "3915"
+				}]
+			}]
+		}]
+	}],
+	"alert_headers": [{
+		"alert_id": 200838,
+		"header_text": "Fairmount Line: A new schedule becomes effective Saturday, September 9th. Trains will operate between South Station and Readville unless buses are necessary on Saturdays due to the construction of Blue Hill Ave Station.",
+		"effect_name": "Schedule Change"
+	}, {
+		"alert_id": 215107,
+		"header_text": "Kingston/Plymouth Line Train 1052 (9:37 am from Plymouth) is expected to depart Plymouth 10-15 minutes behind schedule.",
+		"effect_name": "Delay"
+	}, {
+		"alert_id": 215111,
+		"header_text": "Needham Train 1604 (10:00 am inbound) has departed Needham Heights and is operating 5-10 minutes late due to an earlier mechanical issue.",
+		"effect_name": "Delay"
+	}]
+}
