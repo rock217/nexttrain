@@ -34,7 +34,7 @@ themecolor     = orange
 font           = ImageFont.load(os.path.dirname(os.path.realpath(__file__)) + '/helvR08.pil')
 
 # Custom Settings
-if 1==1 :
+if 0==1 :
 	place = 'place-sstat'
 	filter = 'Alewife'
 	station_label = "North to Alewife"
