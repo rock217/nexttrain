@@ -14,11 +14,12 @@ from rgbmatrix import Adafruit_RGBmatrix
 api_key = 'wX9NwuHnZU2ToO7GmGR9uw'
 place = 'place-grnst'
 filter = 'Oak Grove'
-station_label = "GreenSt. North "
+station_label = " To Oak Grove"
 
-place = 'place-sstat'
-filter = 'Alewife'
-station_label = "North to Alewife"
+if 1==0 :
+	place = 'place-sstat'
+	filter = 'Alewife'
+	station_label = "North to Alewife"
 
 fps            = 8
 width          = 64  # Matrix size (pixels) -- change for different matrix
@@ -35,7 +36,7 @@ aqua           = (216, 240, 252)
 white          = (255, 255, 255)
 black          = (0, 0, 0)
 
-themecolor     = red
+themecolor     = orange
 font           = ImageFont.load(os.path.dirname(os.path.realpath(__file__)) + '/helvR08.pil')
 
 # Main application -----------------------------------------------------------
@@ -88,10 +89,10 @@ while True:
 
 	draw.text((1, 0), station_label, font=font, fill=themecolor)
 
-	draw.line((0, 0, width, 0), fill=themecolor) #top
-	draw.line((0, 10, width, 10), fill=themecolor) #middle
-	draw.line((0, height-1, width, height-1), fill=themecolor)  # bottom
-	draw.line((0, 0, 0, height), fill=themecolor)  # left
+	draw.line((0, 0, width, 0), fill=themecolor)                   # top
+	draw.line((0, 10, width, 10), fill=themecolor)                 # middle
+	draw.line((0, height-1, width, height-1), fill=themecolor)     # bottom
+	draw.line((0, 0, 0, height), fill=themecolor)                  # left
 	draw.line((width - 1, 0, width - 1, height), fill=themecolor)  # right
 
 	# Timing
