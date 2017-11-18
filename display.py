@@ -16,11 +16,6 @@ place = 'place-grnst'
 filter = 'Oak Grove'
 station_label = " To Oak Grove"
 
-if 1==0 :
-	place = 'place-sstat'
-	filter = 'Alewife'
-	station_label = "North to Alewife"
-
 fps            = 8
 width          = 64  # Matrix size (pixels) -- change for different matrix
 height         = 32  # types (incl. tiling).  Other code may need tweaks.
@@ -35,9 +30,15 @@ plum           = (194, 147, 181)
 aqua           = (216, 240, 252)
 white          = (255, 255, 255)
 black          = (0, 0, 0)
-
 themecolor     = orange
 font           = ImageFont.load(os.path.dirname(os.path.realpath(__file__)) + '/helvR08.pil')
+
+# Custom Settings
+if 1==1 :
+	place = 'place-sstat'
+	filter = 'Alewife'
+	station_label = "North to Alewife"
+	themecolor = red
 
 # Main application -----------------------------------------------------------
 
