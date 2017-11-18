@@ -4,12 +4,14 @@ import ImageDraw
 import ImageFont
 import os
 import time
-from predict import getTrainTimes
+import math
+from predict import predict
 
 from rgbmatrix import Adafruit_RGBmatrix
 
 
 # Configuration
+fps            = 5
 width          = 64  # Matrix size (pixels) -- change for different matrix
 height         = 32  # types (incl. tiling).  Other code may need tweaks.
 matrix         = Adafruit_RGBmatrix(32, 2) # rows, chain length
@@ -21,14 +23,11 @@ white = (255, 255, 255)
 greenLineGreen = (66, 134, 8)
 font           = ImageFont.load(os.path.dirname(os.path.realpath(__file__)) + '/helvR08.pil')
 
-
 # Main application -----------------------------------------------------------
 
 # Drawing takes place in offscreen buffer to prevent flicker
 image       = Image.new('RGB', (width, height))
 draw        = ImageDraw.Draw(image)
-currentTime = 0.0
-prevTime    = 0.0
 
 # Clear matrix on exit.  Otherwise it's annoying if you need to break and
 # fiddle with some code while LEDs are blinding you.
@@ -37,9 +36,13 @@ def clearOnExit():
 
 atexit.register(clearOnExit)
 
+train_stop = predict()
+
+currentTime = 0.0
+prevTime    = 0.0
 # Event loop
 while True:
-	data = getTrainTimes()
+	data = train_stop.gettraintimes()
 	print data
 	# Draw Stuff
 	draw.rectangle((0, 0, width, height), fill=orangeLineOrange)
@@ -50,14 +53,27 @@ while True:
 
 	for label, times in data.items():
 		times.sort()
-		minutes = [x / 60 for x in times[0:3]]
+		times = [x / 60 for x in times[0:3]]
+		minutes = []
+		for duration in times:
+			minutes.append(int(math.ceil((duration))))
+
+		print minutes
 		draw.text((2, 0), "To:  "+label, font=font, fill=orangeLineOrange)
 		draw.text((2, 10), ", ".join(map(str, minutes)) +" mins. ", font=font, fill=white)
 
 	draw.text((5, 20), "   No Delays! ", font=font, fill=greenLineGreen)
-	# Offscreen buffer is copied to screen
 
+
+	# Timing
+	currentTime = time.time()
+	timeDelta = (1.0 / fps) - (currentTime - prevTime)
+	if (timeDelta > 0.0):
+		time.sleep(timeDelta)
+	prevTime = currentTime
+
+	# Offscreen buffer is copied to screen
 	matrix.SetImage(image.im.id, 0, 0)
-	time.sleep(15)
+
 
 text = raw_input("Press enter to exit...")
