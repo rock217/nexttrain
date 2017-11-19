@@ -5,7 +5,7 @@ import time
 
 class predictor:
     __api_key = None
-    __json = {}
+    __json = None
     __last_fetch = 0.0
     __place = None
     __filter = None
@@ -32,7 +32,7 @@ class predictor:
             self.__json = self.__get_data()
             self.__last_fetch = currentTime
 
-        if not "mode" in self.__json:
+        if self.__json is None:
             message = 'Cannot process data feed from MBTA.'
             if "alert_headers" in self.__json and len(self.__json["alert_headers"]) > 0:
                 message = ""
