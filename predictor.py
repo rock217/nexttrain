@@ -20,7 +20,9 @@ class predictor:
         try:
             connection = urllib.urlopen('http://realtime.mbta.com/developer/api/v2/predictionsbystop?api_key='+self.__api_key +'&stop='+self.__place+'&format=json')
             data = json.loads(connection.read())
+            print data
             connection.close()
+
 
         finally:
             return data
