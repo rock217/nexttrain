@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/bagelsign.iml" filepath="$PROJECT_DIR$/.idea/bagelsign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/nexttrain.iml" filepath="$PROJECT_DIR$/.idea/nexttrain.iml" />
     </modules>
   </component>
 </project>

@@ -27,19 +27,17 @@ class predictor:
 
     def get_train_times(self):
         currentTime = time.time()
-        data = {}
         if (not bool(self.__json) or currentTime - self.__last_fetch > 15):
             self.__json = self.__get_data()
             self.__last_fetch = currentTime
-
         if self.__json is None:
             message = 'Cannot process data feed from MBTA.'
-            if "alert_headers" in self.__json and len(self.__json["alert_headers"]) > 0:
-                message = ""
-                for alert in self.__json["alert_headers"]:
-                    message += alert["header_text"]+"  "
             raise ValueError(message)
-
+        elif "alert_headers" in self.__json and len(self.__json["alert_headers"]) > 0:
+            message = ""
+            for alert in self.__json["alert_headers"]:
+                message += alert["header_text"]+"  "
+        data = {}
         for mode in self.__json["mode"]:
             if mode["mode_name"] == "Subway":
                 for route in mode["route"]:
