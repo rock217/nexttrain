@@ -120,4 +120,4 @@ while True:
 	prevTime = currentTime
 	# Offscreen buffer is copied to screen
 	matrix.SetImage(image.im.id, 0, 0)
-	image.save("/tmp/train.jpg")
+	image.save("/var/www/html/train.jpg")
