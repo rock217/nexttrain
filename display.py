@@ -111,13 +111,13 @@ while True:
 				else:
 					whiteminutes.append(duration)
 
-			redminuteslabel = "  ".join(map(str, redminutes))
+			redminuteslabel = ", ".join(map(str, redminutes))
 			if(redminuteslabel):
-				redminuteslabel = redminuteslabel+"  "
-			whiteminuteslabel = "  ".join(map(str, whiteminutes))+"  mins "
+				redminuteslabel = redminuteslabel+", "
+			whiteminuteslabel = ", ".join(map(str, whiteminutes))+" mins "
 
-			draw.text((2, 10), redminuteslabel , font=font, fill=red)
-			draw.text((2+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
+			draw.text((3, 10), redminuteslabel , font=font, fill=red)
+			draw.text((3+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
 
  
 	draw.text((1, 0), station_label, font=font, fill=yellow)
@@ -125,7 +125,7 @@ while True:
 
 	separator = ":" if int(time.time()) % 2 == 0 else " "
 	time_label = time.strftime("%b %d %-I"+separator+"%M%p")
-	draw.text((1, 20), time_label, font=font, fill=green)
+	draw.text((3, 20), time_label, font=font, fill=green)
 	# Timing
 	currentTime = time.time()
 	timeDelta = (1.0 / fps) - (currentTime - prevTime)
