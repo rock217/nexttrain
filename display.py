@@ -16,7 +16,7 @@ place = 'place-grnst'
 filter = 'Oak Grove'
 station_label = " Green to Oak G."
 
-fps            = 4
+fps            = 2
 width          = 64  # Matrix size (pixels) -- change for different matrix
 height         = 32  # types (incl. tiling).  Other code may need tweaks.
 matrix         = Adafruit_RGBmatrix(32, 2) # rows, chain length
@@ -64,7 +64,7 @@ def drawBox():
 
 
 # Splash Screen'
-drawBox()
+
 draw.text((1, 0), "NextTrain v0.1", font=font, fill=yellow)
 draw.text((1, 10), "Made by Rock!", font=font, fill=white)
 draw.text((1, 20), "Loading Data...", font=font, fill=green)
@@ -118,6 +118,6 @@ while True:
 	if (timeDelta > 0.0):
 		time.sleep(timeDelta)
 	prevTime = currentTime
-
 	# Offscreen buffer is copied to screen
 	matrix.SetImage(image.im.id, 0, 0)
+	image.save("/tmp/train.jpg")
