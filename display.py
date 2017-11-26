@@ -95,10 +95,9 @@ while True:
 	draw.line((0, 0, 0, height), fill=themecolor)                  # left
 	draw.line((width - 1, 0, width - 1, height), fill=themecolor)  # right
 
-	if(time.time() % 2 == 0):
-		time_label = time.strftime("%b %d %H:%M")
-	else:
-		time_label = time.strftime("%b %d %H %M")
+
+	separator = ":" if time.time() % 2 else " "
+	time_label = time.strftime("%b %d %H"+separator+"%M")
 	draw.text((5, 20), time_label, font=font, fill=green)
 	# Timing
 	currentTime = time.time()
