@@ -16,7 +16,7 @@ place = 'place-grnst'
 filter = 'Oak Grove'
 station_label = " To Oak Grove"
 
-fps            = 8
+fps            = 4
 width          = 64  # Matrix size (pixels) -- change for different matrix
 height         = 32  # types (incl. tiling).  Other code may need tweaks.
 matrix         = Adafruit_RGBmatrix(32, 2) # rows, chain length
@@ -99,7 +99,7 @@ while True:
 	draw.line((width - 1, 0, width - 1, height), fill=themecolor)  # right
 
 
-	separator = ":" if time.time() % 2 else " "
+	separator = ":" if time.time() % 2 == 0 else " "
 	time_label = time.strftime("%b %d %H"+separator+"%M")
 	draw.text((5, 20), time_label, font=font, fill=green)
 	# Timing
