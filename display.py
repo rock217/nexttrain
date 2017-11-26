@@ -14,7 +14,7 @@ from rgbmatrix import Adafruit_RGBmatrix
 api_key = '9ChpTppjokGjY-FGPKhmSA'
 place = 'place-grnst'
 filter = 'Oak Grove'
-station_label = "Green To OakGrv"
+station_label = " Grn to OakGrv"
 
 fps            = 4
 width          = 64  # Matrix size (pixels) -- change for different matrix
