@@ -115,7 +115,7 @@ while True:
 			whiteminuteslabel = ", ".join(map(str, whiteminutes))
 
 			draw.text((2, 10), redminuteslabel , font=font, fill=red)
-			draw.text((2+font.getsize(redminuteslabel), 10), whiteminuteslabel, font=font, fill=white)
+			draw.text((2+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
 
  
 	draw.text((1, 0), station_label, font=font, fill=yellow)
