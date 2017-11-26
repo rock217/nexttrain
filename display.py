@@ -102,10 +102,21 @@ while True:
 		for label, times in data.items():
 			times.sort()
 			times = [x / 60 for x in times[0:3]]
-			minutes = []
+			redminutes = []
+			whiteminutes = []
 			for duration in times:
-				minutes.append(int(math.ceil((duration))))
-			draw.text((2, 10), ", ".join(map(str, minutes)) +" mins ", font=font, fill=white)
+				duration = int(math.ceil((duration)))
+				if(duration < 4):
+					redminutes.append(duration)
+				else:
+					whiteminutes.append(duration)
+
+			redminuteslabel = ", ".join(map(str, redminutes))
+			whiteminuteslabel = ", ".join(map(str, whiteminutes))
+
+			draw.text((2, 10), redminuteslabel , font=font, fill=red)
+			draw.text((2+font.getsize(redminuteslabel), 10), whiteminuteslabel, font=font, fill=white)
+
  
 	draw.text((1, 0), station_label, font=font, fill=yellow)
 	drawBox()
