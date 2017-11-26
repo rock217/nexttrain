@@ -112,6 +112,8 @@ while True:
 					whiteminutes.append(duration)
 
 			redminuteslabel = ", ".join(map(str, redminutes))
+			if(redminuteslabel):
+				redminuteslabel = redminuteslabel+", "
 			whiteminuteslabel = ", ".join(map(str, whiteminutes))
 
 			draw.text((2, 10), redminuteslabel , font=font, fill=red)
