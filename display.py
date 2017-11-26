@@ -22,7 +22,7 @@ height         = 32  # types (incl. tiling).  Other code may need tweaks.
 matrix         = Adafruit_RGBmatrix(32, 2) # rows, chain length
 
 green          = (0, 132, 69)
-yellow         = (232, 200, 175)
+yellow         = (232, 175, 125)
 red            = (225, 39, 38)
 orange         = (232, 116, 36)
 blue           = (15, 75, 145)
