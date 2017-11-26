@@ -99,7 +99,7 @@ while True:
 
 		for label, times in data.items():
 			times.sort()
-			times = [x / 60 for x in times[0:4]]
+			times = [x / 60 for x in times[0:3]]
 			minutes = []
 			for duration in times:
 				minutes.append(int(math.ceil((duration))))
