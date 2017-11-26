@@ -65,8 +65,8 @@ def drawBox():
 
 # Splash Screen'
 drawBox()
-draw.text((1, 0), "NextTrain v0.1", font=font, fill=yellow)
-draw.text((1, 10), "Made by Rock!", font=font, fill=white)
+draw.text((1, 0), "NextTrain v0.1", font=font, fill=white)
+draw.text((1, 10), "Made by Rock!", font=font, fill=yellow)
 draw.text((1, 20), "Loading Data...", font=font, fill=green)
 matrix.SetImage(image.im.id, 0, 0)
 
@@ -106,7 +106,7 @@ while True:
 				minutes.append(int(math.ceil((duration))))
 			draw.text((2, 10), ", ".join(map(str, minutes)) +" mins ", font=font, fill=white)
  
-	draw.text((1, 0), station_label, font=font, fill=yellow)
+	draw.text((1, 0), station_label, font=font, fill=white)
 	drawBox()
 
 	separator = ":" if int(time.time()) % 2 == 0 else " "
