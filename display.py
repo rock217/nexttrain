@@ -98,8 +98,8 @@ while True:
 	draw.line((0, 0, 0, height), fill=themecolor)                  # left
 	draw.line((width - 1, 0, width - 1, height), fill=themecolor)  # right
 
-	print time.time() % 2
-	separator = ":" if time.time() % 2 == 0 else " "
+
+	separator = ":" if int(time.time()) % 2 == 0 else " "
 	time_label = time.strftime("%b %d %H"+separator+"%M")
 	draw.text((5, 20), time_label, font=font, fill=green)
 	# Timing
