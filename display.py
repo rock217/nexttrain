@@ -103,7 +103,7 @@ while True:
 			minutes = []
 			for duration in times:
 				minutes.append(int(math.ceil((duration))))
-			draw.text((2, 10), ", ".join(map(str, minutes)) +" mins. ", font=font, fill=white)
+			draw.text((2, 10), ", ".join(map(str, minutes)) +" mins ", font=font, fill=white)
  
 	draw.text((1, 0), station_label, font=font, fill=themecolor)
 	drawBox()
