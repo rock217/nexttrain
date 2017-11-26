@@ -124,8 +124,8 @@ while True:
 	drawBox()
 
 	separator = ":" if int(time.time()) % 2 == 0 else " "
-	time_label = time.strftime("%b %d %H"+separator+"%M")
-	draw.text((5, 20), time_label, font=font, fill=green)
+	time_label = time.strftime("%b %d %-I"+separator+"%M%p")
+	draw.text((3, 20), time_label, font=font, fill=green)
 	# Timing
 	currentTime = time.time()
 	timeDelta = (1.0 / fps) - (currentTime - prevTime)
