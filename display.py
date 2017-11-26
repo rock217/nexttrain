@@ -70,7 +70,7 @@ draw.text((1, 10), "Made by Rock!", font=font, fill=white)
 draw.text((1, 20), "Loading Data...", font=font, fill=green)
 matrix.SetImage(image.im.id, 0, 0)
 
-time.sleep(5)
+time.sleep(3)
 
 currentTime     = 0.0
 prevTime        = 0.0
@@ -125,7 +125,7 @@ while True:
 
 	separator = ":" if int(time.time()) % 2 == 0 else " "
 	time_label = time.strftime("%b %d %-I"+separator+"%M%p")
-	draw.text((3, 20), time_label, font=font, fill=green)
+	draw.text((1, 20), time_label, font=font, fill=green)
 	# Timing
 	currentTime = time.time()
 	timeDelta = (1.0 / fps) - (currentTime - prevTime)
