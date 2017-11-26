@@ -53,15 +53,30 @@ def clearOnExit():
 atexit.register(clearOnExit)
 train_stop_predictor = predictor(api_key, place, filter)
 
-# Splash Screen
+
+def drawBox():
+	draw.line((0, 0, width, 0), fill=themecolor)  # top
+	draw.line((0, 10, width, 10), fill=themecolor)  # middle
+	draw.line((0, height - 1, width, height - 1), fill=themecolor)  # bottom
+	draw.line((0, 0, 0, height), fill=themecolor)  # left
+	draw.line((width - 1, 0, width - 1, height), fill=themecolor)  # right
 
 
+# Splash Screen'
+drawBox()
+draw.text((1, 20), "NextTrain v0.1", font=font, fill=orange)
+draw.text((1, 10), "Stop Wandering!", font=font, fill=white)
+draw.text((1, 20), "Created by: Rock", font=font, fill=green)
+time.sleep(2)
 
 currentTime = 0.0
 prevTime    = 0.0
 error = None
 errlen = 0
 # Event loop
+
+
+
 while True:
 	data = {}
 	try:
@@ -91,13 +106,7 @@ while True:
 			draw.text((2, 10), ",".join(map(str, minutes)) +" mins. ", font=font, fill=white)
  
 	draw.text((1, 0), station_label, font=font, fill=themecolor)
-
-	draw.line((0, 0, width, 0), fill=themecolor)                   # top
-	draw.line((0, 10, width, 10), fill=themecolor)                 # middle
-	draw.line((0, height-1, width, height-1), fill=themecolor)     # bottom
-	draw.line((0, 0, 0, height), fill=themecolor)                  # left
-	draw.line((width - 1, 0, width - 1, height), fill=themecolor)  # right
-
+	drawBox()
 
 	separator = ":" if int(time.time()) % 2 == 0 else " "
 	time_label = time.strftime("%b %d %H"+separator+"%M")
