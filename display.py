@@ -64,12 +64,12 @@ def drawBox():
 
 # Splash Screen'
 drawBox()
-draw.text((1, 20), "NextTrain v0.1", font=font, fill=orange)
+draw.text((1, 0), "NextTrain v0.1", font=font, fill=orange)
 draw.text((1, 10), "Loading Data...", font=font, fill=white)
 draw.text((1, 20), "Created by: Rock", font=font, fill=green)
 matrix.SetImage(image.im.id, 0, 0)
 
-time.sleep(2)
+time.sleep(5)
 
 currentTime = 0.0
 prevTime    = 0.0
