@@ -11,7 +11,7 @@ from predictor import predictor
 from rgbmatrix import Adafruit_RGBmatrix
 
 # Configuration
-api_key = '	9ChpTppjokGjY-FGPKhmSA'
+api_key = '9ChpTppjokGjY-FGPKhmSA'
 place = 'place-grnst'
 filter = 'Oak Grove'
 station_label = " To Oak Grove"
@@ -65,7 +65,7 @@ def drawBox():
 # Splash Screen'
 drawBox()
 draw.text((1, 0), "NextTrain v0.1", font=font, fill=orange)
-draw.text((1, 10), "Made by Rock", font=font, fill=white)
+draw.text((1, 10), "Made by Rock.", font=font, fill=white)
 draw.text((1, 20), "Loading Data...", font=font, fill=green)
 matrix.SetImage(image.im.id, 0, 0)
 
