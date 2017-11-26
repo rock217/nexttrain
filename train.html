@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body bgcolor="#424242">
+    <img id="train" src="http://192.168.1.30/train.png" height="128" width="256">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+	$(() => setInterval(()=>{
+		$("#train").attr("src", "http://192.168.1.30/train.png?"+new Date().getTime());
+	}, 15000));
+    </script>
+</body>
+</html>
