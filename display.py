@@ -11,7 +11,7 @@ from predictor import predictor
 from rgbmatrix import Adafruit_RGBmatrix
 
 # Configuration
-api_key = 'wX9NwuHnZU2ToO7GmGR9uw'
+api_key = '	9ChpTppjokGjY-FGPKhmSA'
 place = 'place-grnst'
 filter = 'Oak Grove'
 station_label = " To Oak Grove"
@@ -65,8 +65,8 @@ def drawBox():
 # Splash Screen'
 drawBox()
 draw.text((1, 0), "NextTrain v0.1", font=font, fill=orange)
-draw.text((1, 10), "Loading Data...", font=font, fill=white)
-draw.text((1, 20), "Created by: Rock", font=font, fill=green)
+draw.text((1, 10), "Made by Rock", font=font, fill=white)
+draw.text((1, 20), "Loading Data...", font=font, fill=green)
 matrix.SetImage(image.im.id, 0, 0)
 
 time.sleep(5)
@@ -120,4 +120,3 @@ while True:
 
 	# Offscreen buffer is copied to screen
 	matrix.SetImage(image.im.id, 0, 0)
-	print "tick"
