@@ -78,8 +78,7 @@ while True:
 		errlen = errlen - .75
 
 	else:
-		time_label = time.strftime("%b %d %H:%M")
-		draw.text((5, 20),time_label, font=font, fill=green)
+
 		for label, times in data.items():
 			times.sort()
 			times = [x / 60 for x in times[0:4]]
@@ -87,7 +86,7 @@ while True:
 			for duration in times:
 				minutes.append(int(math.ceil((duration))))
 			draw.text((2, 10), ",".join(map(str, minutes)) +" mins. ", font=font, fill=white)
-
+ 
 	draw.text((1, 0), station_label, font=font, fill=themecolor)
 
 	draw.line((0, 0, width, 0), fill=themecolor)                   # top
@@ -96,6 +95,11 @@ while True:
 	draw.line((0, 0, 0, height), fill=themecolor)                  # left
 	draw.line((width - 1, 0, width - 1, height), fill=themecolor)  # right
 
+	if(time.time() % 2 == 0):
+		time_label = time.strftime("%b %d %H:%M")
+	else:
+		time_label = time.strftime("%b %d %H %M")
+	draw.text((5, 20), time_label, font=font, fill=green)
 	# Timing
 	currentTime = time.time()
 	timeDelta = (1.0 / fps) - (currentTime - prevTime)
