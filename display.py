@@ -105,8 +105,9 @@ while True:
 			redminutes = []
 			whiteminutes = []
 			for duration in times:
-				duration = int(math.ceil((duration)))
-				if(duration < 4):
+				duration = int(duration)
+
+				if(duration < 5):
 					redminutes.append(duration)
 				else:
 					whiteminutes.append(duration)
