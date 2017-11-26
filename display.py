@@ -22,7 +22,7 @@ height         = 32  # types (incl. tiling).  Other code may need tweaks.
 matrix         = Adafruit_RGBmatrix(32, 2) # rows, chain length
 
 green          = (0, 132, 69)
-yellow         = (232, 212, 36)
+yellow         = (232, 164, 103)
 red            = (225, 39, 38)
 orange         = (232, 116, 36)
 blue           = (15, 75, 145)
@@ -106,7 +106,7 @@ while True:
 				minutes.append(int(math.ceil((duration))))
 			draw.text((2, 10), ", ".join(map(str, minutes)) +" mins ", font=font, fill=white)
  
-	draw.text((1, 0), station_label, font=font, fill=white)
+	draw.text((1, 0), station_label, font=font, fill=yellow)
 	drawBox()
 
 	separator = ":" if int(time.time()) % 2 == 0 else " "
