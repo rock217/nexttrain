@@ -51,8 +51,11 @@ draw        = ImageDraw.Draw(image)
 def clearOnExit():
 	matrix.Clear()
 atexit.register(clearOnExit)
-
 train_stop_predictor = predictor(api_key, place, filter)
+
+# Splash Screen
+
+
 
 currentTime = 0.0
 prevTime    = 0.0
@@ -108,3 +111,4 @@ while True:
 
 	# Offscreen buffer is copied to screen
 	matrix.SetImage(image.im.id, 0, 0)
+	print "tick"
