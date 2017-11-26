@@ -72,10 +72,11 @@ matrix.SetImage(image.im.id, 0, 0)
 
 time.sleep(5)
 
-currentTime = 0.0
-prevTime    = 0.0
-error = None
-errlen = 0
+currentTime     = 0.0
+prevTime        = 0.0
+prevSaveTime    = 0.0
+error           = None
+errlen          = 0
 # Event loop
 
 while True:
@@ -120,4 +121,7 @@ while True:
 	prevTime = currentTime
 	# Offscreen buffer is copied to screen
 	matrix.SetImage(image.im.id, 0, 0)
-	image.save("/var/www/html/train.jpg")
+	if(currentTime - prevSaveTime > 60):
+		image.save("/var/www/html/train.png")
+		prevSaveTime = currentTime
+
