@@ -18,7 +18,9 @@ class predictor:
     def __get_data(self):
         data = None
         try:
-            connection = urllib.urlopen('http://realtime.mbta.com/developer/api/v2/predictionsbystop?api_key='+self.__api_key +'&stop='+self.__place+'&format=json')
+            url = 'http://realtime.mbta.com/developer/api/v2/predictionsbystop?api_key='+self.__api_key +'&stop='+self.__place+'&format=json'
+            print url
+            connection = urllib.urlopen(url)
             data = json.loads(connection.read())
             #print data
             connection.close()
