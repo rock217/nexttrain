@@ -52,8 +52,8 @@ def drawBox():
 	draw.line((0, 10, width, 10), fill=themecolor)  # middle
 	draw.line((0, 22, width, 22), fill=themecolor)  # middle2
 
-	draw.line((32, 10, 32, 22), fill=themecolor)  # middleup
-	draw.line((33, 10, 33, 22), fill=themecolor)  # middleup2
+	draw.line((32, 22, 32, 32), fill=themecolor)  # middleup
+	draw.line((33, 22, 33, 32), fill=themecolor)  # middleup2
 
 	draw.line((0, height - 1, width, height - 1), fill=themecolor)  # bottom
 	draw.line((0, 0, 0, height), fill=themecolor)  # left
