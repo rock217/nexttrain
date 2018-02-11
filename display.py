@@ -1,14 +1,14 @@
 import atexit
-import math
+import resource
 import os
 import time
 
 import Image
 import ImageDraw
 import ImageFont
+from rgbmatrix import Adafruit_RGBmatrix
 
 from predictor import predictor
-from rgbmatrix import Adafruit_RGBmatrix
 
 # Configuration
 api_key = '9ChpTppjokGjY-FGPKhmSA'
@@ -34,13 +34,6 @@ black          = (0, 0, 0)
 themecolor     = orange
 font           = ImageFont.load(os.path.dirname(os.path.realpath(__file__)) + '/helvR08.pil')
 
-# Custom Settings
-if 1==0 :
-	place = 'place-sstat'
-	filter = 'Alewife'
-	station_label = "North to Alewife"
-	themecolor = red
-
 # Main application -----------------------------------------------------------
 
 # Drawing takes place in offscreen buffer to prevent flicker
@@ -53,7 +46,6 @@ def clearOnExit():
 	matrix.Clear()
 atexit.register(clearOnExit)
 train_stop_predictor = predictor(api_key, place, filter)
-
 
 def drawBox():
 	draw.line((0, 0, width, 0), fill=themecolor)  # top
@@ -72,15 +64,16 @@ matrix.SetImage(image.im.id, 0, 0)
 
 time.sleep(3)
 
-currentTime     = 0.0
 prevTime        = 0.0
 prevSaveTime    = 0.0
-error           = None
-errlen          = 0
-# Event loop
+errlen = 0
 
-while True:
+# Event loop
+def loop():
+	global prevTime, prevSaveTime, errlen
 	data = {}
+	error = None
+
 	try:
 		data = train_stop_predictor.get_train_times()
 	except ValueError as e:
@@ -92,13 +85,13 @@ while True:
 	# Draw Stuff
 	draw.rectangle((0, 0, width, height), fill=black)
 
-	if bool(error) and errlen > 0:
-		draw.text((6, 10), "No Train Data.", font=font, fill=white)
-		draw.text((1 - (errlen2 - errlen), 20), error, font=font, fill=red)
-		errlen = errlen - .75
+	if bool(error):
+		if errlen > 0:
+			draw.text((6, 10), "No Train Data.", font=font, fill=white)
+			draw.text((1 - (errlen2 - errlen), 20), error, font=font, fill=red)
+			errlen = errlen - .75
 
 	else:
-
 		for label, times in data.items():
 			times.sort()
 			times = [x / 60 for x in times[0:3]]
@@ -138,4 +131,7 @@ while True:
 	if(currentTime - prevSaveTime > 60):
 		image.save("/var/www/html/train.png")
 		prevSaveTime = currentTime
+	print 'Memory usage: %s (kb)' % resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
 
+while True:
+	loop()
