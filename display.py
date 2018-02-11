@@ -149,10 +149,10 @@ def loop():
 	prevTime = currentTime
 	# Offscreen buffer is copied to screen
 	matrix.SetImage(image.im.id, 0, 0)
-	if(currentTime - prevSaveTime > 60):
+	if(currentTime - prevSaveTime > 15):
 		image.save("/var/www/html/train.png")
 		prevSaveTime = currentTime
-	print 'Memory usage: %s (kb)' % resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+		print 'Memory usage: %s (kb)' % resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
 
 while True:
 	loop()
