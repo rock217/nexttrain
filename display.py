@@ -119,6 +119,7 @@ def loop():
 	draw.text((1, 20), date_label, font=font, fill=green)
 
 	time_label = time.strftime("12"+separator+" % M")
+	print font.getsize(time_label)[0]
 	draw.text((1, 64 - font.getsize(time_label)[0]), time_label, font=font, fill=green)
 
 	draw.text((1, 20), date_label, font=font, fill=green)
