@@ -67,10 +67,14 @@ time.sleep(3)
 prevTime        = 0.0
 prevSaveTime    = 0.0
 errlen = 0
-
+errlen2 = 0
+alertCooldown = 0
+alertLen = 0
+alertLen2 = 0
 # Event loop
 def loop():
-	global prevTime, prevSaveTime, errlen
+	global prevTime, prevSaveTime, errlen, errlen2, alertCooldown, alertLen, alertLen2
+	currentTime = time.time()
 	data = {}
 	error = None
 
@@ -101,6 +105,8 @@ def loop():
 				duration = int(duration)
 
 				if(duration < 5):
+					if duration==0:
+						duration="A"
 					redminutes.append(duration)
 				else:
 					whiteminutes.append(duration)
@@ -117,11 +123,26 @@ def loop():
 	draw.text((1, 0), station_label, font=font, fill=yellow)
 	drawBox()
 
-	separator = ":" if int(time.time()) % 2 == 0 else " "
-	time_label = time.strftime("%b %d %-I"+separator+"%M%p")
-	draw.text((1, 20), time_label, font=font, fill=green)
+	if bool(data["alerts"]):
+		if alertCooldown > 0:
+			if alertCooldown < currentTime:
+				alertCooldown = 0
+		else:
+			if alertLen <= 0:
+				alertLen = float(font.getsize(data["alerts"])[0])
+				alertLen2 = alertLen
+				alertLen += 64
+			draw.text((1 - (alertLen2 - alertLen), 20), data["alerts"], font=font, fill=red)
+			alertLen = alertLen - .75
+			if alertLen <= 0:
+				alertCooldown = currentTime+60
+
+	else:
+		separator = ":" if int(time.time()) % 2 == 0 else " "
+		time_label = time.strftime("%b %d %-I"+separator+"%M%p")
+		draw.text((1, 20), time_label, font=font, fill=green)
 	# Timing
-	currentTime = time.time()
+
 	timeDelta = (1.0 / fps) - (currentTime - prevTime)
 	if (timeDelta > 0.0):
 		time.sleep(timeDelta)

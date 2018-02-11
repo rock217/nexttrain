@@ -34,7 +34,7 @@ class predictor:
     def get_train_times(self):
         currentTime = time.time()
         ret = {
-            "alert":"",
+            "alert":"Orange Line notice: Due to a track condition, Orange Line trains will use reduced speeds southbound between Community College and North Station until further notice.",
             "trains":{},
             "time":0
         }
