@@ -114,11 +114,11 @@ def loop():
 	draw.text((1, 0), station_label, font=font, fill=yellow)
 	drawBox()
 
-	separator = ":" if int(time.time()) % 2 == 0 else " "
 	date_label = time.strftime("%b %d")
 	draw.text((1, 20), date_label, font=font, fill=green)
 
-	time_label = time.strftime("12"+separator+" % M")
+	separator = ":" if int(time.time()) % 2 == 0 else " "
+	time_label = time.strftime("12"+separator+"%M")
 	timex = 64-float(font.getsize(time_label)[0])
 
 	draw.text((timex, 20), time_label, font=font, fill=green)
