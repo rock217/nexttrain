@@ -52,9 +52,6 @@ def drawBox():
 	draw.line((0, 10, width, 10), fill=themecolor)  # middle
 	draw.line((0, 22, width, 22), fill=themecolor)  # middle2
 
-	draw.line((31, 22, 31, 32), fill=themecolor)  # middleup
-	draw.line((32, 22, 32, 32), fill=themecolor)  # middleup2
-
 	draw.line((0, height - 1, width, height - 1), fill=themecolor)  # bottom
 	draw.line((0, 0, 0, height), fill=themecolor)  # left
 	draw.line((width - 1, 0, width - 1, height), fill=themecolor)  # right
@@ -96,12 +93,12 @@ def loop():
 		draw.text((1, 0), station_label, font=font, fill=yellow)
 
 		date_label = time.strftime("%b %d")
-		datex = 32 + ((30 - float(font.getsize(date_label)[0])) / 2)
+		datex = 32 + ((31 - float(font.getsize(date_label)[0])) / 2)
 		draw.text((datex, 21), date_label, font=font, fill=green)
 
 		separator = ":" if int(time.time()) % 2 == 0 else " "
 		time_label = time.strftime("%-I" + separator + "%M")
-		timex = 0 + ((30 - float(font.getsize(time_label)[0])) / 2)
+		timex = 1 + ((31 - float(font.getsize(time_label)[0])) / 2)
 		draw.text((timex, 21), time_label, font=font, fill=green)
 
 		for label, times in data["trains"].items():
