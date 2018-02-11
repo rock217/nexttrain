@@ -119,7 +119,7 @@ def loop():
 
 	separator = ":" if int(time.time()) % 2 == 0 else " "
 	time_label = time.strftime("12"+separator+"%M")
-	timex = 64-float(font.getsize(time_label)[0])
+	timex = 62-float(font.getsize(time_label)[0])
 
 	draw.text((timex, 20), time_label, font=font, fill=green)
 
