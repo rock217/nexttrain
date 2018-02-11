@@ -115,12 +115,13 @@ def loop():
 	drawBox()
 
 	date_label = time.strftime("%b %d")
-	draw.text((1, 20), date_label, font=font, fill=green)
+	datex = 61 - float(font.getsize(date_label)[0])
+	draw.text((datex, 20), date_label, font=font, fill=green)
 
 	separator = ":" if int(time.time()) % 2 == 0 else " "
 	time_label = time.strftime("%-I"+separator+"%M")
-	timex = 61 - float(font.getsize(time_label)[0])
-	draw.text((timex, 20), time_label, font=font, fill=green)
+
+	draw.text((1, 20), time_label, font=font, fill=green)
 
 	# Timing
 	timeDelta = (1.0 / fps) - (currentTime - prevTime)
