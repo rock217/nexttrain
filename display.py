@@ -106,22 +106,24 @@ def loop():
 			redminutes = []
 			whiteminutes = []
 			for duration in times:
-				duration = int(duration)
-
 				if(duration < 5):
-					if duration==0:
+					if duration <= .25:
 						duration="A"
+					else:
+						duration = int(duration)
 					redminutes.append(duration)
 				else:
-					whiteminutes.append(duration)
+					whiteminutes.append(int(duration))
 
 			redminuteslabel = ", ".join(map(str, redminutes))
 			if(redminuteslabel):
 				redminuteslabel = redminuteslabel+", "
 			whiteminuteslabel = ", ".join(map(str, whiteminutes))+" mins "
 
-			draw.text((3, 10), redminuteslabel , font=font, fill=red)
-			draw.text((3+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
+			xoff = 1 + ((62 - (font.getsize(redminuteslabel)[0] + font.getsize(whiteminuteslabel)[0]))/2)
+
+			draw.text((xoff, 10), redminuteslabel , font=font, fill=red)
+			draw.text((xoff+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
 
 	# Timing
 	timeDelta = (1.0 / fps) - (currentTime - prevTime)
