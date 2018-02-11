@@ -66,12 +66,10 @@ time.sleep(3)
 
 prevTime        = 0.0
 prevSaveTime    = 0.0
-errlen = 0.0
-errlen2 = 0.0
 
 # Event loop
 def loop():
-	global prevTime, prevSaveTime, errlen, errlen2
+	global prevTime, prevSaveTime
 	currentTime = time.time()
 	data = {}
 	error = None
@@ -80,18 +78,13 @@ def loop():
 		data = train_stop_predictor.get_train_times()
 	except ValueError as e:
 		error = str(e)
-		if errlen <= 0:
-			errlen = float(font.getsize(error)[0])
-			errlen2 = errlen
-			errlen += 64
+
 	# Draw Stuff
 	draw.rectangle((0, 0, width, height), fill=black)
 
 	if bool(error):
-		if errlen > 0:
-			draw.text((6, 10), "No Train Data.", font=font, fill=white)
-			draw.text((1 - (errlen2 - errlen), 20), error, font=font, fill=red)
-			errlen = errlen - .75
+		draw.text((6, 10), "No Train Data.", font=font, fill=white)
+		draw.text((1, 20), error, font=font, fill=red)
 
 	else:
 		for label, times in data["trains"].items():
@@ -122,7 +115,7 @@ def loop():
 	drawBox()
 
 	separator = ":" if int(time.time()) % 2 == 0 else " "
-	time_label = time.strftime("%b %d %-I"+separator+"%M%p")
+	time_label = time.strftime("%b %d 12"+separator+"%M%p")
 	draw.text((1, 20), time_label, font=font, fill=green)
 	# Timing
 
