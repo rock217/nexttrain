@@ -106,14 +106,11 @@ def loop():
 			redminutes = []
 			whiteminutes = []
 			for duration in times:
+				duration = int(duration)
 				if(duration < 5):
-					if duration <= .25:
-						duration="A"
-					else:
-						duration = int(duration)
 					redminutes.append(duration)
 				else:
-					whiteminutes.append(int(duration))
+					whiteminutes.append(duration)
 
 			redminuteslabel = ", ".join(map(str, redminutes))
 			if(redminuteslabel):
