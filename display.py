@@ -50,7 +50,6 @@ train_stop_predictor = predictor(api_key, place, filter)
 def drawBox():
 	draw.line((0, 0, width, 0), fill=themecolor)  # top
 	draw.line((0, 10, width, 10), fill=themecolor)  # middle
-	draw.line((0, 22, width, 22), fill=themecolor)  # middle2
 
 	draw.line((0, height - 1, width, height - 1), fill=themecolor)  # bottom
 	draw.line((0, 0, 0, height), fill=themecolor)  # left
