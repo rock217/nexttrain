@@ -87,6 +87,18 @@ def loop():
 		draw.text((1, 20), error, font=font, fill=red)
 
 	else:
+		drawBox()
+		draw.text((1, 0), station_label, font=font, fill=yellow)
+
+		date_label = time.strftime("%b %d")
+		datex = 33 + (30 - (float(font.getsize(date_label)[0]) / 2))
+		draw.text((datex, 20), date_label, font=font, fill=green)
+
+		separator = ":" if int(time.time()) % 2 == 0 else " "
+		time_label = time.strftime("%-I" + separator + "%M")
+		timex = 1 + (30 - (float(font.getsize(time_label)[0]) / 2))
+		draw.text((timex, 20), time_label, font=font, fill=green)
+
 		for label, times in data["trains"].items():
 			times.sort()
 			times = [x / 60 for x in times[0:3]]
@@ -109,19 +121,6 @@ def loop():
 
 			draw.text((3, 10), redminuteslabel , font=font, fill=red)
 			draw.text((3+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
-
- 
-	draw.text((1, 0), station_label, font=font, fill=yellow)
-	drawBox()
-
-	date_label = time.strftime("%b %d")
-	datex = 32 + float(font.getsize(date_label)[0])/2
-	draw.text((datex, 20), date_label, font=font, fill=green)
-
-	separator = ":" if int(time.time()) % 2 == 0 else " "
-	time_label = time.strftime("%-I"+separator+"%M")
-	timex = 1 + float(font.getsize(time_label)[0])/2
-	draw.text((timex, 20), time_label, font=font, fill=green)
 
 	# Timing
 	timeDelta = (1.0 / fps) - (currentTime - prevTime)
