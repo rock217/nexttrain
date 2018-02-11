@@ -92,7 +92,7 @@ def loop():
 			errlen = errlen - .75
 
 	else:
-		for label, times in data.items():
+		for label, times in data["trains"].items():
 			times.sort()
 			times = [x / 60 for x in times[0:3]]
 			redminutes = []
