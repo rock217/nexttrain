@@ -50,6 +50,11 @@ train_stop_predictor = predictor(api_key, place, filter)
 def drawBox():
 	draw.line((0, 0, width, 0), fill=themecolor)  # top
 	draw.line((0, 10, width, 10), fill=themecolor)  # middle
+	draw.line((0, 22, width, 22), fill=themecolor)  # middle2
+
+	draw.line((32, 10, 32, 22), fill=themecolor)  # middleup
+	draw.line((33, 10, 33, 22), fill=themecolor)  # middleup2
+
 	draw.line((0, height - 1, width, height - 1), fill=themecolor)  # bottom
 	draw.line((0, 0, 0, height), fill=themecolor)  # left
 	draw.line((width - 1, 0, width - 1, height), fill=themecolor)  # right
@@ -92,12 +97,12 @@ def loop():
 
 		date_label = time.strftime("%b %d")
 		datex = 33 + ((30 - float(font.getsize(date_label)[0])) / 2)
-		draw.text((datex, 20), date_label, font=font, fill=green)
+		draw.text((datex, 21), date_label, font=font, fill=green)
 
 		separator = ":" if int(time.time()) % 2 == 0 else " "
 		time_label = time.strftime("%-I" + separator + "%M")
 		timex = 1 + ((30 - float(font.getsize(time_label)[0])) / 2)
-		draw.text((timex, 20), time_label, font=font, fill=green)
+		draw.text((timex, 21), time_label, font=font, fill=green)
 
 		for label, times in data["trains"].items():
 			times.sort()
