@@ -123,16 +123,16 @@ def loop():
 	draw.text((1, 0), station_label, font=font, fill=yellow)
 	drawBox()
 
-	if bool(data["alerts"]):
+	if bool(data["alert"]):
 		if alertCooldown > 0:
 			if alertCooldown < currentTime:
 				alertCooldown = 0
 		else:
 			if alertLen <= 0:
-				alertLen = float(font.getsize(data["alerts"])[0])
+				alertLen = float(font.getsize(data["alert"])[0])
 				alertLen2 = alertLen
 				alertLen += 64
-			draw.text((1 - (alertLen2 - alertLen), 20), data["alerts"], font=font, fill=red)
+			draw.text((1 - (alertLen2 - alertLen), 20), data["alert"], font=font, fill=red)
 			alertLen = alertLen - .75
 			if alertLen <= 0:
 				alertCooldown = currentTime+60
