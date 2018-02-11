@@ -16,7 +16,7 @@ place = 'place-grnst'
 filter = 'Oak Grove'
 station_label = " Green to Oak G."
 
-fps            = 2
+fps            = 4
 width          = 64  # Matrix size (pixels) -- change for different matrix
 height         = 32  # types (incl. tiling).  Other code may need tweaks.
 matrix         = Adafruit_RGBmatrix(32, 2) # rows, chain length
