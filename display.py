@@ -119,13 +119,10 @@ def loop():
 
 	separator = ":" if int(time.time()) % 2 == 0 else " "
 	time_label = time.strftime("12"+separator+"%M")
-	timex = 62-float(font.getsize(time_label)[0])
-
+	timex = 61 - float(font.getsize(time_label)[0])
 	draw.text((timex, 20), time_label, font=font, fill=green)
 
-	draw.text((1, 20), date_label, font=font, fill=green)
 	# Timing
-
 	timeDelta = (1.0 / fps) - (currentTime - prevTime)
 	if (timeDelta > 0.0):
 		time.sleep(timeDelta)
