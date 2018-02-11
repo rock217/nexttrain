@@ -120,7 +120,7 @@ def loop():
 
 	time_label = time.strftime("12"+separator+" % M")
 
-	draw.text(64-font.getsize(time_label)[0], 20, time_label, font=font, fill=green)
+	draw.text(64-float(font.getsize(time_label)[0]), 20, time_label, font=font, fill=green)
 
 	draw.text((1, 20), date_label, font=font, fill=green)
 	# Timing
