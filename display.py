@@ -118,7 +118,7 @@ def loop():
 	draw.text((1, 20), date_label, font=font, fill=green)
 
 	separator = ":" if int(time.time()) % 2 == 0 else " "
-	time_label = time.strftime("12"+separator+"%M")
+	time_label = time.strftime("%-I"+separator+"%M")
 	timex = 61 - float(font.getsize(time_label)[0])
 	draw.text((timex, 20), time_label, font=font, fill=green)
 
