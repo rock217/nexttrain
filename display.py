@@ -66,14 +66,12 @@ time.sleep(3)
 
 prevTime        = 0.0
 prevSaveTime    = 0.0
-errlen = 0
-errlen2 = 0
-alertCooldown = 0
-alertLen = 0
-alertLen2 = 0
+errlen = 0.0
+errlen2 = 0.0
+
 # Event loop
 def loop():
-	global prevTime, prevSaveTime, errlen, errlen2, alertCooldown, alertLen, alertLen2
+	global prevTime, prevSaveTime, errlen, errlen2
 	currentTime = time.time()
 	data = {}
 	error = None
@@ -123,24 +121,9 @@ def loop():
 	draw.text((1, 0), station_label, font=font, fill=yellow)
 	drawBox()
 
-	if bool(data["alert"]):
-		if alertCooldown > 0:
-			if alertCooldown < currentTime:
-				alertCooldown = 0
-		else:
-			if alertLen <= 0:
-				alertLen = float(font.getsize(data["alert"])[0])
-				alertLen2 = alertLen
-				alertLen += 64
-			draw.text((1 - (alertLen2 - alertLen), 20), data["alert"], font=font, fill=red)
-			alertLen = alertLen - .75
-			if alertLen <= 0:
-				alertCooldown = currentTime+60
-
-	else:
-		separator = ":" if int(time.time()) % 2 == 0 else " "
-		time_label = time.strftime("%b %d %-I"+separator+"%M%p")
-		draw.text((1, 20), time_label, font=font, fill=green)
+	separator = ":" if int(time.time()) % 2 == 0 else " "
+	time_label = time.strftime("%b %d %-I"+separator+"%M%p")
+	draw.text((1, 20), time_label, font=font, fill=green)
 	# Timing
 
 	timeDelta = (1.0 / fps) - (currentTime - prevTime)
@@ -149,7 +132,7 @@ def loop():
 	prevTime = currentTime
 	# Offscreen buffer is copied to screen
 	matrix.SetImage(image.im.id, 0, 0)
-	if(currentTime - prevSaveTime > 15):
+	if(currentTime - prevSaveTime > 60):
 		image.save("/var/www/html/train.png")
 		prevSaveTime = currentTime
 		print 'Memory usage: %s (kb)' % resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
