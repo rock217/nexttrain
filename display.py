@@ -91,7 +91,7 @@ def loop():
 		draw.text((1, 0), station_label, font=font, fill=yellow)
 
 		date_label = time.strftime("%b %d")
-		datex = 33 + (30 - (float(font.getsize(date_label)[0])) / 2)
+		datex = 33 + ((30 - float(font.getsize(date_label)[0])) / 2)
 		draw.text((datex, 20), date_label, font=font, fill=green)
 
 		separator = ":" if int(time.time()) % 2 == 0 else " "
