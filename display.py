@@ -63,7 +63,7 @@ draw.text((1, 10), "Made by Rock!", font=font, fill=white)
 draw.text((1, 20), "Loading Data...", font=font, fill=green)
 matrix.SetImage(image.im.id, 0, 0)
 
-time.sleep(3)
+#time.sleep(3)
 
 prevTime        = 0.0
 prevSaveTime    = 0.0
@@ -100,27 +100,25 @@ def loop():
 		timex = 1 + ((31 - float(font.getsize(time_label)[0])) / 2)
 		draw.text((timex, 21), time_label, font=font, fill=green)
 
-		for label, times in data["trains"].items():
-			times.sort()
-			times = [x / 60 for x in times[0:3]]
-			redminutes = []
-			whiteminutes = []
-			for duration in times:
-				duration = int(duration)
-				if(duration < 5):
-					redminutes.append(duration)
-				else:
-					whiteminutes.append(duration)
+        data["trains"].sort()
+        times = [x for x in data["trains"][0:3]]
+        redminutes = []
+        whiteminutes = []
+        for minutes in times:
+            if (minutes < 5):
+                redminutes.append(int(minutes/60))
+            else:
+                whiteminutes.append(int(minutes/60))
 
-			redminuteslabel = ", ".join(map(str, redminutes))
-			if(redminuteslabel):
-				redminuteslabel = redminuteslabel+", "
-			whiteminuteslabel = ", ".join(map(str, whiteminutes))+" mins "
+        redminuteslabel = ", ".join(map(str, redminutes))
+        if(redminuteslabel):
+            redminuteslabel = redminuteslabel+", "
+        whiteminuteslabel = ", ".join(map(str, whiteminutes))+" mins "
 
-			xoff = 1 + ((62 - (font.getsize(redminuteslabel)[0] + font.getsize(whiteminuteslabel)[0]))/2)
+        xoff = 1 + ((62 - (font.getsize(redminuteslabel)[0] + font.getsize(whiteminuteslabel)[0]))/2)
 
-			draw.text((xoff, 10), redminuteslabel , font=font, fill=red)
-			draw.text((xoff+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
+        draw.text((xoff, 10), redminuteslabel , font=font, fill=red)
+        draw.text((xoff+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
 
 	# Timing
 	timeDelta = (1.0 / fps) - (currentTime - prevTime)
@@ -130,13 +128,13 @@ def loop():
 	# Offscreen buffer is copied to screen
 	matrix.SetImage(image.im.id, 0, 0)
 	if(currentTime - prevSaveTime > 60):
-		image.save("/var/www/html/train.png")
+		#image.save("/var/www/html/train.png")
 		prevSaveTime = currentTime
 		memory_info = 'Memory usage: %s (kb)' % resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
 		print memory_info
-		wr = open('/var/www/html/memory.txt', 'w')
-		wr.write(memory_info)
-		wr.close()
+		#wr = open('/var/www/html/memory.txt', 'w')
+		#wr.write(memory_info)
+		#wr.close()
 
 while True:
 	loop()
