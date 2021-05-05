@@ -3,7 +3,7 @@ import resource
 import os
 import time
 
-import Image
+from PIL import Image
 import ImageDraw
 import ImageFont
 from rgbmatrix import Adafruit_RGBmatrix
