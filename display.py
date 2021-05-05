@@ -6,20 +6,25 @@ import PIL
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
-from rgbmatrix import RGBmatrix
+from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
 from predictor import predictor
 
+options = RGBMatrixOptions()
+options.rows = 32
+options.chain_length = 2
+options.parallel = 1
+options.hardware_mapping = 'adafruit-hat'  # If you have an Adafruit HAT: 'adafruit-hat'
+
+matrix = RGBMatrix(options = options)
+
+
 # Configuration
-api_key = '9ChpTppjokGjY-FGPKhmSA'
-place = 'place-grnst'
-filter = 'Oak Grove'
 station_label = " Green to Oak G."
 
 fps            = 10
 width          = 64  # Matrix size (pixels) -- change for different matrix
 height         = 32  # types (incl. tiling).  Other code may need tweaks.
-matrix         = RGBmatrix(32, 2) # rows, chain length
 
 green          = (0, 132, 69)
 yellow         = (232, 175, 125)
@@ -45,7 +50,7 @@ draw        = ImageDraw.Draw(image)
 def clearOnExit():
     matrix.Clear()
 atexit.register(clearOnExit)
-train_stop_predictor = predictor(api_key, place, filter)
+train_stop_predictor = predictor()
 
 def drawBox():
     draw.line((0, 0, width, 0), fill=themecolor)  # top
