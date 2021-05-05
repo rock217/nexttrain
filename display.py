@@ -66,7 +66,7 @@ def drawBox():
 draw.text((1, 0), "NextTrain v0.1", font=font, fill=yellow)
 draw.text((1, 10), "Made by Rock!", font=font, fill=white)
 draw.text((1, 20), "Loading Data...", font=font, fill=green)
-matrix.SetImage(image.im.id, 0, 0)
+matrix.SetImage(image)
 
 #time.sleep(3)
 
@@ -131,7 +131,7 @@ def loop():
         time.sleep(timeDelta)
     prevTime = currentTime
     # Offscreen buffer is copied to screen
-    matrix.SetImage(image.im.id, 0, 0)
+    matrix.SetImage(image)
     if(currentTime - prevSaveTime > 60):
         #image.save("/var/www/html/train.png")
         prevSaveTime = currentTime
