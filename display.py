@@ -2,11 +2,11 @@ import atexit
 import resource
 import os
 import time
-import Pillow
-from Pillow import Image
-from Pillow import ImageDraw
-from Pillow import ImageFont
-from rgbmatrix import Adafruit_RGBmatrix
+import PIL
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
+from rgbmatrix import RGBmatrix
 
 from predictor import predictor
 
@@ -19,7 +19,7 @@ station_label = " Green to Oak G."
 fps            = 10
 width          = 64  # Matrix size (pixels) -- change for different matrix
 height         = 32  # types (incl. tiling).  Other code may need tweaks.
-matrix         = Adafruit_RGBmatrix(32, 2) # rows, chain length
+matrix         = RGBmatrix(32, 2) # rows, chain length
 
 green          = (0, 132, 69)
 yellow         = (232, 175, 125)
