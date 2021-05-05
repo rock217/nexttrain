@@ -2,10 +2,10 @@ import atexit
 import resource
 import os
 import time
-import PIL
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
+import Pillow
+from Pillow import Image
+from Pillow import ImageDraw
+from Pillow import ImageFont
 from rgbmatrix import Adafruit_RGBmatrix
 
 from predictor import predictor
