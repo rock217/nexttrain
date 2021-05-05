@@ -131,7 +131,7 @@ def loop():
         #image.save("/var/www/html/train.png")
         prevSaveTime = currentTime
         memory_info = 'Memory usage: %s (kb)' % resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-        print memory_info
+        print(memory_info)
         #wr = open('/var/www/html/memory.txt', 'w')
         #wr.write(memory_info)
         #wr.close()
