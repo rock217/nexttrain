@@ -41,7 +41,7 @@ class predictor:
             returntime = int(traintimestamp - currentTime)
             if returntime < 0:
                 returntime = 0
-            ret["trains"].append()
+            ret["trains"].append(returntime)
 
         ret["time"] = currentTime
         return ret
