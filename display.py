@@ -127,8 +127,8 @@ def loop():
             draw.text((xoff+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
         else:
             whiteminuteslabel = "What trains?"
-            xoff = 1 + ((62 - (font.getsize(redminuteslabel)[0] + font.getsize(whiteminuteslabel)[0]))/2)
-            draw.text((xoff+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
+            xoff = 1 + ((62 - (font.getsize(whiteminuteslabel)[0]))/2)
+            draw.text((xoff, 10), whiteminuteslabel, font=font, fill=white)
 
 
     # Timing
