@@ -49,6 +49,7 @@ draw        = ImageDraw.Draw(image)
 def clearOnExit():
     matrix.Clear()
 atexit.register(clearOnExit)
+
 train_stop_predictor = predictor()
 
 def drawBox():
@@ -63,7 +64,7 @@ def drawBox():
 # Splash Screen'
 
 draw.text((1, 0),  "NextTrain v0.2", font=font, fill=yellow)
-draw.text((1, 10), "rock217@github", font=font, fill=white)
+draw.text((1, 10), " rock217@gh", font=font, fill=white)
 draw.text((1, 20), "Loading data...", font=font, fill=green)
 matrix.SetImage(image)
 
