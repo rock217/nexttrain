@@ -62,9 +62,9 @@ def drawBox():
 
 # Splash Screen'
 
-draw.text((1, 0), "NextTrain v0.2", font=font, fill=yellow)
-draw.text((1, 10), "Made by Rock!", font=font, fill=white)
-draw.text((1, 20), "Loading Data...", font=font, fill=green)
+draw.text((1, 0),  "NextTrain v0.2", font=font, fill=yellow)
+draw.text((1, 10), "rock217@github", font=font, fill=white)
+draw.text((1, 20), "Loading data...", font=font, fill=green)
 matrix.SetImage(image)
 
 time.sleep(2)
@@ -111,7 +111,7 @@ def loop():
         for thetime in times:
 
             if (thetime < 5*60):
-                if returntime < 0:
+                if thetime <= 0:
                     redminutes.append("!")
                 else:
                     redminutes.append(int(thetime/60))
