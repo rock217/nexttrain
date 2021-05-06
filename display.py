@@ -110,7 +110,7 @@ def loop():
         redminutes = []
         whiteminutes = []
         for minutes in times:
-            if (minutes < 5):
+            if (minutes < 5*60):
                 redminutes.append(int(minutes/60))
             else:
                 whiteminutes.append(int(minutes/60))
