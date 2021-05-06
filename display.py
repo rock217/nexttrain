@@ -63,19 +63,19 @@ def drawBox():
 
 # Splash Screen'
 
-draw.text((1, 0),  "NextTrain v0.2", font=font, fill=yellow)
-draw.text((1, 10), " rock217@gh", font=font, fill=white)
-draw.text((1, 20), "Loading data...", font=font, fill=green)
+draw.text((1, 0),  "nexttrain v0.2", font=font, fill=yellow)
+draw.text((1, 10), "rock217@gh", font=font, fill=white)
+draw.text((1, 20), "loading data...", font=font, fill=green)
 matrix.SetImage(image)
 
-time.sleep(2)
+time.sleep(3)
 
 prevTime        = 0.0
-prevSaveTime    = 0.0
+prevLogTime    = 0.0
 
 # Event loop
 def loop():
-    global prevTime, prevSaveTime
+    global prevTime, prevLogTime
     currentTime = time.time()
     data = {}
     error = None
@@ -102,8 +102,8 @@ def loop():
 
         separator = ":" if int(time.time()) % 2 == 0 else " "
         time_label = time.strftime("%-I" + separator + "%M")
-        timex = 0 + ((31 - float(font.getsize(time_label)[0])) / 2)
-        draw.text((timex, 21), time_label, font=font, fill=green)
+        timex = 0 + ((30 - float(font.getsize(time_label)[0])) / 2)
+        draw.text((timex, 20), time_label, font=font, fill=green)
 
         data["trains"].sort()
         times = [x for x in data["trains"][0:3]]
@@ -140,8 +140,9 @@ def loop():
 
     # Offscreen buffer is copied to screen
     matrix.SetImage(image)
-    if(currentTime - prevSaveTime > 60):
-        prevSaveTime = currentTime
+
+    if(currentTime - prevLogTime > 60):
+        prevLogTime = currentTime
         memory_info = 'Memory usage: %s (kb)' % resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
         print(memory_info)
 
