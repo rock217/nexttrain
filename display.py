@@ -98,7 +98,7 @@ def loop():
 
         date_label = time.strftime("%b %d")
         datex = 31 + ((31 - float(font.getsize(date_label)[0])) / 2)
-        draw.text((datex, 21), date_label, font=font, fill=green)
+        draw.text((datex, 20), date_label, font=font, fill=green)
 
         separator = ":" if int(time.time()) % 2 == 0 else " "
         time_label = time.strftime("%-I" + separator + "%M")
