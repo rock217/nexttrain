@@ -37,9 +37,10 @@ class predictor:
         for train in self.__data["data"]:
 
             traindatetime = train["attributes"]["departure_time"]
-            traintimestamp = time.mktime(datetime.datetime.strptime(traindatetime, "%Y-%m-%dT%H:%M:%S%z").timetuple())
-            returntime = int(traintimestamp - currentTime)
-            ret["trains"].append(returntime)
+            if traindatetime:
+                traintimestamp = time.mktime(datetime.datetime.strptime(traindatetime, "%Y-%m-%dT%H:%M:%S%z").timetuple())
+                returntime = int(traintimestamp - currentTime)
+                ret["trains"].append(returntime)
 
         ret["time"] = currentTime
         return ret

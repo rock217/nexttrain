@@ -111,10 +111,8 @@ def loop():
         for thetime in times:
 
             if (thetime < 5*60):
-                if thetime <= 0:
-                    redminutes.append("!")
-                else:
-                    redminutes.append(int(thetime/60))
+                redminutes.append(int(thetime/60))
+
             else:
                 whiteminutes.append(int(thetime/60))
 
