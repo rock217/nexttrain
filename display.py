@@ -109,10 +109,12 @@ def loop():
         redminutes = []
         whiteminutes = []
         for thetime in times:
-            if returntime < 0:
-                redminutes.append("!")
-            else if (thetime < 5*60):
-                redminutes.append(int(thetime/60))
+
+            if (thetime < 5*60):
+                if returntime < 0:
+                    redminutes.append("!")
+                else:
+                    redminutes.append(int(thetime/60))
             else:
                 whiteminutes.append(int(thetime/60))
 
