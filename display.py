@@ -18,7 +18,6 @@ options.hardware_mapping = 'adafruit-hat'  # If you have an Adafruit HAT: 'adafr
 
 matrix = RGBMatrix(options = options)
 
-
 # Configuration
 station_label = " Green to Oak G."
 
@@ -63,7 +62,7 @@ def drawBox():
 
 # Splash Screen'
 
-draw.text((1, 0), "NextTrain v0.1", font=font, fill=yellow)
+draw.text((1, 0), "NextTrain v0.2", font=font, fill=yellow)
 draw.text((1, 10), "Made by Rock!", font=font, fill=white)
 draw.text((1, 20), "Loading Data...", font=font, fill=green)
 matrix.SetImage(image)
@@ -121,7 +120,6 @@ def loop():
         whiteminuteslabel = ", ".join(map(str, whiteminutes))+" mins "
 
         xoff = 1 + ((62 - (font.getsize(redminuteslabel)[0] + font.getsize(whiteminuteslabel)[0]))/2)
-
         draw.text((xoff, 10), redminuteslabel , font=font, fill=red)
         draw.text((xoff+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
 
@@ -130,16 +128,14 @@ def loop():
     if (timeDelta > 0.0):
         time.sleep(timeDelta)
     prevTime = currentTime
+
     # Offscreen buffer is copied to screen
     matrix.SetImage(image)
     if(currentTime - prevSaveTime > 60):
-        #image.save("/var/www/html/train.png")
         prevSaveTime = currentTime
         memory_info = 'Memory usage: %s (kb)' % resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
         print(memory_info)
-        #wr = open('/var/www/html/memory.txt', 'w')
-        #wr.write(memory_info)
-        #wr.close()
+
 
 while True:
     loop()

@@ -1,8 +1,8 @@
-
 import urllib.request
 import json
 import time
 import datetime
+
 class predictor:
 
     __data = None
