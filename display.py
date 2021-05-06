@@ -108,22 +108,28 @@ def loop():
         times = [x for x in data["trains"][0:3]]
         redminutes = []
         whiteminutes = []
-        for thetime in times:
+        if times:
+            for thetime in times:
 
-            if (thetime < 5*60):
-                redminutes.append(int(thetime/60))
+                if (thetime < 5*60):
+                    redminutes.append(int(thetime/60))
 
-            else:
-                whiteminutes.append(int(thetime/60))
+                else:
+                    whiteminutes.append(int(thetime/60))
 
-        redminuteslabel = ", ".join(map(str, redminutes))
-        if(redminuteslabel):
-            redminuteslabel = redminuteslabel+", "
-        whiteminuteslabel = ", ".join(map(str, whiteminutes))+" mins "
+            redminuteslabel = ", ".join(map(str, redminutes))
+            if(redminuteslabel):
+                redminuteslabel = redminuteslabel+", "
+            whiteminuteslabel = ", ".join(map(str, whiteminutes))+" mins "
 
-        xoff = 1 + ((62 - (font.getsize(redminuteslabel)[0] + font.getsize(whiteminuteslabel)[0]))/2)
-        draw.text((xoff, 10), redminuteslabel , font=font, fill=red)
-        draw.text((xoff+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
+            xoff = 1 + ((62 - (font.getsize(redminuteslabel)[0] + font.getsize(whiteminuteslabel)[0]))/2)
+            draw.text((xoff, 10), redminuteslabel , font=font, fill=red)
+            draw.text((xoff+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
+        else:
+            whiteminuteslabel = "What trains?"
+            xoff = 1 + ((62 - (font.getsize(redminuteslabel)[0] + font.getsize(whiteminuteslabel)[0]))/2)
+            draw.text((xoff+font.getsize(redminuteslabel)[0], 10), whiteminuteslabel, font=font, fill=white)
+
 
     # Timing
     timeDelta = (1.0 / fps) - (currentTime - prevTime)
