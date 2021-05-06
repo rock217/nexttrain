@@ -101,7 +101,7 @@ def loop():
 
         separator = ":" if int(time.time()) % 2 == 0 else " "
         time_label = time.strftime("%-I" + separator + "%M")
-        timex = 1 + ((31 - float(font.getsize(time_label)[0])) / 2)
+        timex = 0 + ((31 - float(font.getsize(time_label)[0])) / 2)
         draw.text((timex, 21), time_label, font=font, fill=green)
 
         data["trains"].sort()
