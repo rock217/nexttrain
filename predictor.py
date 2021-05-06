@@ -11,12 +11,13 @@ class predictor:
     def __get_data(self):
         data = None
         try:
+            print('fetching data')
             url = 'https://api-v3.mbta.com/predictions?filter[stop]=place-grnst&filter[direction_id]=0'
             connection = urllib.request.urlopen(url)
             data = json.loads(connection.read())
             connection.close()
         except:
-            print("rrer")
+            print("error fetching feed")
         finally:
             if data is None:
                 raise ValueError('Network Error')
@@ -24,17 +25,15 @@ class predictor:
 
     def get_train_times(self):
         currentTime = time.time()
+        if currentTime - self.__last_fetch > 15:
+            self.__data = self.__get_data()
+            self.__last_fetch = currentTime
+
         ret = {
             "alert":"",
             "trains":[],
             "time":0
         }
-
-        if currentTime - self.__last_fetch > 15:
-            self.__data = self.__get_data()
-            self.__last_fetch = currentTime
-
-
         for train in self.__data["data"]:
 
             traindatetime = train["attributes"]["departure_time"]
