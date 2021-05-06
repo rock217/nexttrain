@@ -39,8 +39,6 @@ class predictor:
             traindatetime = train["attributes"]["departure_time"]
             traintimestamp = time.mktime(datetime.datetime.strptime(traindatetime, "%Y-%m-%dT%H:%M:%S%z").timetuple())
             returntime = int(traintimestamp - currentTime)
-            if returntime < 0:
-                returntime = 0
             ret["trains"].append(returntime)
 
         ret["time"] = currentTime

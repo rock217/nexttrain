@@ -67,7 +67,7 @@ draw.text((1, 10), "Made by Rock!", font=font, fill=white)
 draw.text((1, 20), "Loading Data...", font=font, fill=green)
 matrix.SetImage(image)
 
-#time.sleep(3)
+time.sleep(2)
 
 prevTime        = 0.0
 prevSaveTime    = 0.0
@@ -108,11 +108,13 @@ def loop():
         times = [x for x in data["trains"][0:3]]
         redminutes = []
         whiteminutes = []
-        for minutes in times:
-            if (minutes < 5*60):
-                redminutes.append(int(minutes/60))
+        for thetime in times:
+            if returntime < 0:
+                redminutes.append("!")
+            else if (thetime < 5*60):
+                redminutes.append(int(thetime/60))
             else:
-                whiteminutes.append(int(minutes/60))
+                whiteminutes.append(int(thetime/60))
 
         redminuteslabel = ", ".join(map(str, redminutes))
         if(redminuteslabel):
